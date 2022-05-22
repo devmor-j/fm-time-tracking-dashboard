@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+import TrackingCard from "./components/TrackingCard.vue";
+import ProfileCard from "./components/ProfileCard.vue";
 </script>
 
 <template>
   <main>
-    <HelloWorld />
+    <!-- <ProfileCard /> -->
+    <TrackingCard />
   </main>
 </template>
 
