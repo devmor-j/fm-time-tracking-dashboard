@@ -1,6 +1,6 @@
 {
   "name": "time-tracking-dashboard",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Morteza Jamshidi <devmor.j@gmail.com>",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "modern-css-reset": "^1.4.0",
     "vue": "^3.2.33"
   },
   "devDependencies": {
