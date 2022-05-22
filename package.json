@@ -1,6 +1,7 @@
 {
   "name": "time-tracking-dashboard",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "author": "Morteza Jamshidi <devmor.j@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
