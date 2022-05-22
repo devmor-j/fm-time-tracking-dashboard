@@ -4,7 +4,7 @@ import ProfileCard from "./components/ProfileCard.vue";
 </script>
 
 <template>
-  <main>
+  <main class="container">
     <!-- <ProfileCard /> -->
     <TrackingCard />
   </main>
@@ -12,4 +12,10 @@ import ProfileCard from "./components/ProfileCard.vue";
 
 <style>
 @import "./assets/base.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>

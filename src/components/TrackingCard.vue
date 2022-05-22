@@ -7,13 +7,13 @@ import cardStyles from "../assets/card.module.css";
 
 <template>
   <BaseCard>
-    <div>
-      <h3>Work</h3>
+    <div :class="cardStyles.header">
+      <h3 :class="cardStyles.title">Work</h3>
       <IconEllipsis />
     </div>
-    <div>
-      <h4>32hrs</h4>
-      <time datetime="">Last Week - 36hrs</time>
+    <div :class="cardStyles.header">
+      <h4 :class="cardStyles.duration">32hrs</h4>
+      <time datetime="" :class="cardStyles.datetime">Last Week - 36hrs</time>
     </div>
   </BaseCard>
 </template>

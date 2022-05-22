@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.25rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.duration {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+.datetime {
+  color: var(--clr-pale-blue);
+  font-size: 0.75rem;
+}
