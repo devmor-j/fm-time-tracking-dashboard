@@ -15,7 +15,7 @@ import cardStyles from "../assets/card.module.css";
     <BaseCard>
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">Work</h3>
-        <img src="../assets/images/icon-ellipsis.svg" alt="" />
+        <img src="../assets/images/icon-ellipsis.svg" alt="" class="three-dots" />
       </div>
 
       <div :class="cardStyles.header">

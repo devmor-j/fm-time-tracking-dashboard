@@ -45,7 +45,7 @@ import cardStyles from "../assets/card.module.css";
 
 .profile-image {
   width: 3.5rem;
-  border: 2.5px solid white;
+  border: 2.5px solid whitesmoke;
   border-radius: 50%;
 }
 
@@ -59,8 +59,7 @@ import cardStyles from "../assets/card.module.css";
 }
 
 .interval-wrapper {
-  --card-overlap-size: 1.25rem;
-  transform: translateY(calc(-1 * var(--card-overlap-size)));
+  transform: translateY(var(--profile-card-transform));
 }
 
 .interval {
