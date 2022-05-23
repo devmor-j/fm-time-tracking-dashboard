@@ -31,6 +31,8 @@ import cardStyles from "../assets/card.module.css";
   --card-inline-size: 18rem;
   inline-size: min(calc(100% - 2 * 1rem), var(--card-inline-size));
   position: relative;
+  /* margin is needed to prevent card collaping because of absolute positioned svg */
+  margin-block-start: 2rem;
 }
 
 .decoration-wrapper {
