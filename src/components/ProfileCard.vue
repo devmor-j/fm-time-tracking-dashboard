@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import BaseCard from "./BaseCard.vue";
 
-import cardStyles from "../assets/card.module.css";
+import cardStyles from "../assets/card.module.scss";
 </script>
 
 <template>
   <div :class="cardStyles['card-wrapper']">
-
     <!-- profile content -->
     <BaseCard class="profile-wrapper">
       <!-- width=64 is set inline to prevent layout shift -->
       <!-- image class can be used to override width -->
       <img src="../assets/images/image-jeremy.png" alt="Jeremy profile image" class="profile-image" width="56">
-
       <div>
         <span class="report-for">Report for</span>
         <h3 class="profile-name">Jeremy Robson</h3>
       </div>
     </BaseCard>
-
     <!-- interval selection -->
     <BaseCard class="interval-wrapper">
       <ul class="interval" role="list">
@@ -27,11 +24,12 @@ import cardStyles from "../assets/card.module.css";
         <li>Monthly</li>
       </ul>
     </BaseCard>
-
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@use "../assets/breakpoints"as break;
+
 .profile-wrapper {
   display: flex;
   align-items: center;
@@ -79,5 +77,31 @@ import cardStyles from "../assets/card.module.css";
 
 .interval .active {
   color: whitesmoke;
+}
+
+@media screen and (min-width: break.$tablet) {
+  .profile-wrapper {
+    flex-direction: column;
+  }
+
+  .profile-image {
+    align-self: start;
+    width: 4rem;
+    margin-block-end: 00.5rem;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+    line-height: 1.25;
+    padding-block-end: 2rem;
+  }
+
+  .interval {
+    flex-direction: column;
+  }
+
+  .interval > li {
+    padding-block: 0.5rem;
+  }
 }
 </style>

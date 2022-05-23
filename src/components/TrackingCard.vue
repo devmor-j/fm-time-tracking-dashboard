@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import BaseCard from "./BaseCard.vue";
-import cardStyles from "../assets/card.module.css";
+import cardStyles from "../assets/card.module.scss";
 import { computed } from "vue";
 
 const props = defineProps<{
@@ -31,7 +31,7 @@ const getTitle = computed(() => {
         <img src="../assets/images/icon-ellipsis.svg" alt="" class="three-dots" />
       </div>
 
-      <div :class="cardStyles.header">
+      <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">32hrs</h4>
         <time datetime="" :class="cardStyles.datetime">Last Week - 36hrs</time>
       </div>
