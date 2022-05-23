@@ -22,5 +22,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--clr-very-dark-blue);
-  color: #eee;
+  color: whitesmoke;
 }
