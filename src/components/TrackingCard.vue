@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import BaseCard from "./BaseCard.vue";
-import IconEllipsis from "./icons/IconEllipsis.vue";
 
 import cardStyles from "../assets/card.module.css";
 </script>
@@ -16,7 +15,7 @@ import cardStyles from "../assets/card.module.css";
     <BaseCard>
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">Work</h3>
-        <IconEllipsis />
+        <img src="../assets/images/icon-ellipsis.svg" alt="" />
       </div>
 
       <div :class="cardStyles.header">
