@@ -17,5 +17,6 @@ import ProfileCard from "./components/ProfileCard.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-block: 4rem;
 }
 </style>
