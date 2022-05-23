@@ -1,20 +1,33 @@
 <script setup lang="ts">
 import BaseCard from "./BaseCard.vue";
-
 import cardStyles from "../assets/card.module.css";
+import { computed } from "vue";
+
+const props = defineProps<{
+  type: ('work' | 'play' | 'study' | 'exercise' | 'social' | 'self-care'),
+}>()
+
+const getTitle = computed(() => {
+  const result = props.type[0].toUpperCase() + props.type.slice(1);
+  if (props.type === 'self-care') {
+    return 'Self Care';
+  }
+  return result;
+})
+
 </script>
 
 <template>
   <div :class="cardStyles['card-wrapper']">
     <!-- top decoration svg icon -->
-    <BaseCard class="decoration-wrapper">
-      <img src="../assets/images/icon-work.svg" alt="" class="decoration" />
+    <BaseCard class="decoration-wrapper" :style="{ 'background-color': `var(--clr-card-${$props.type})` }">
+      <img :src="`src/assets/images/icon-${$props.type}.svg`" alt="" class="decoration" />
     </BaseCard>
 
     <!-- card main content -->
     <BaseCard>
       <div :class="cardStyles.header">
-        <h3 :class="cardStyles.title">Work</h3>
+        <h3 :class="cardStyles.title">{{ getTitle }}</h3>
         <img src="../assets/images/icon-ellipsis.svg" alt="" class="three-dots" />
       </div>
 
@@ -30,7 +43,6 @@ import cardStyles from "../assets/card.module.css";
 .decoration-wrapper {
   --padding-inline: 1rem;
   --svg-scale: 0.8;
-  background-color: var(--clr-light-red-1);
   width: 100%;
   position: absolute;
   top: -2rem;
@@ -46,5 +58,6 @@ import cardStyles from "../assets/card.module.css";
   margin-block-start: calc(-1 * var(--padding-inline));
   margin-inline-end: calc(-0.5 * var(--padding-inline));
   transform: scale(var(--svg-scale));
+  padding-block-end: 2rem;
 }
 </style>

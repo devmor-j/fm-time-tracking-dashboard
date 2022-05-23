@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
 :root {
-  --clr-violet: hsl(264, 64%, 52%);
+  --clr-card-social: hsl(264, 64%, 52%);
   --clr-blue: hsl(246, 80%, 60%);
-  --clr-soft-blue: hsl(195, 74%, 62%);
-  --clr-soft-orange: hsl(43, 84%, 65%);
-  --clr-light-red-1: hsl(15, 100%, 70%);
-  --clr-light-red-2: hsl(348, 100%, 68%);
-  --clr-lime-green: hsl(145, 58%, 55%);
+  --clr-card-play: hsl(195, 74%, 62%);
+  --clr-card-self-care: hsl(43, 84%, 65%);
+  --clr-card-work: hsl(15, 100%, 70%);
+  --clr-card-study: hsl(348, 100%, 68%);
+  --clr-card-exercise: hsl(145, 58%, 55%);
 
   --clr-dark-blue: hsl(235, 46%, 20%);
   --clr-very-dark-blue: hsl(226, 43%, 10%);

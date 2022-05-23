@@ -6,8 +6,12 @@ import ProfileCard from "./components/ProfileCard.vue";
 <template>
   <main class="container">
     <ProfileCard />
-    <TrackingCard class="first-tracking-card" />
-    <TrackingCard />
+    <TrackingCard type="work" class="first-tracking-card" />
+    <TrackingCard type="play" />
+    <TrackingCard type="study" />
+    <TrackingCard type="exercise" />
+    <TrackingCard type="social" />
+    <TrackingCard type="self-care" />
   </main>
 </template>
 
