@@ -5,7 +5,7 @@ import ProfileCard from "./components/ProfileCard.vue";
 
 <template>
   <main class="container">
-    <!-- <ProfileCard /> -->
+    <ProfileCard />
     <TrackingCard />
   </main>
 </template>
