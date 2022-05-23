@@ -5,7 +5,7 @@ import cardStyles from "../assets/card.module.css";
 </script>
 
 <template>
-  <div class="card-wrapper">
+  <div :class="cardStyles['card-wrapper']">
     <!-- top decoration svg icon -->
     <BaseCard class="decoration-wrapper">
       <img src="../assets/images/icon-work.svg" alt="" class="decoration" />
@@ -27,14 +27,6 @@ import cardStyles from "../assets/card.module.css";
 </template>
 
 <style scoped>
-.card-wrapper {
-  --card-inline-size: 18rem;
-  inline-size: min(calc(100% - 2 * 1rem), var(--card-inline-size));
-  position: relative;
-  /* margin is needed to prevent card collaping because of absolute positioned svg */
-  margin-block-start: 2rem;
-}
-
 .decoration-wrapper {
   --padding-inline: 1rem;
   --svg-scale: 0.8;
