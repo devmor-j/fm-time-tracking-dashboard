@@ -2,6 +2,7 @@
 import { computed } from "vue";
 import BaseCard from "./BaseCard.vue";
 import cardStyles from "../assets/card.module.scss";
+import IconEllipsis from "./icons/IconEllipsis.vue";
 import type { TrackingType } from "@/types/TrackingType";
 import type { Timeframe } from "../types/Timeframe";
 import type { Interval } from "@/types/Interval";
@@ -68,11 +69,7 @@ const intervalTime = computed(() => {
     <BaseCard class="card-content">
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">{{ getTitle }}</h3>
-        <img
-          src="../assets/images/icon-ellipsis.svg"
-          alt=""
-          class="three-dots"
-        />
+        <IconEllipsis style="cursor: pointer" />
       </div>
       <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">
