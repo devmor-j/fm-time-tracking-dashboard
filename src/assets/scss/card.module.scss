@@ -1,34 +1,23 @@
 @use "breakpoints" as bp;
+@use "colors" as clr;
 
-.clr-pale-blue {
-  color: hsl(236, 100%, 87%);
-}
-.base-dark-blue {
-  background-color: hsl(235, 46%, 20%);
-}
-.profile-blue {
-  background-color: hsl(246, 80%, 60%);
-}
-.profile-desaturated-blue {
-  color: hsl(235, 45%, 61%);
-}
 .tracking-work {
-  background-color: hsl(15, 100%, 70%);
+  background-color: hsl(15, 100%, 70%) !important;
 }
 .tracking-play {
-  background-color: hsl(195, 74%, 62%);
+  background-color: hsl(195, 74%, 62%) !important;
 }
 .tracking-study {
-  background-color: hsl(348, 100%, 68%);
+  background-color: hsl(348, 100%, 68%) !important;
 }
 .tracking-exercise {
-  background-color: hsl(145, 58%, 55%);
+  background-color: hsl(145, 58%, 55%) !important;
 }
 .tracking-social {
-  background-color: hsl(264, 64%, 52%);
+  background-color: hsl(264, 64%, 52%) !important;
 }
 .tracking-self-care {
-  background-color: hsl(43, 84%, 65%);
+  background-color: hsl(43, 84%, 65%) !important;
 }
 
 .card-wrapper {
@@ -63,6 +52,7 @@
 
 .datetime {
   font-size: 0.75rem;
+  color: clr.$pale-blue;
 }
 
 @media screen and (min-width: bp.$tablet) {

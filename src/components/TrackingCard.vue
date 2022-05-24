@@ -76,9 +76,7 @@ function toLowerCaseAndSpaceToHyphen(title: string): string {
         <h4 :class="cardStyles.duration">
           {{ tracking.timeframes[trackingTimeframe].current }}hrs
         </h4>
-        <time
-          datetime=""
-          :class="[cardStyles['datetime'], cardStyles['clr-pale-blue']]"
+        <time datetime="" :class="cardStyles['datetime']"
           >Last {{ timeframeToTime }} -
           {{ tracking.timeframes[trackingTimeframe].previous }}hrs</time
         >
@@ -88,7 +86,9 @@ function toLowerCaseAndSpaceToHyphen(title: string): string {
 </template>
 
 <style lang="scss" scoped>
-$padding-inline: 1rem;
+@use "../assets/scss/colors" as clr;
+
+$svg-padding: 1rem;
 $svg-scale: 0.8;
 .decoration-wrapper {
   width: 100%;
@@ -98,13 +98,13 @@ $svg-scale: 0.8;
   justify-content: end;
   align-items: center;
   z-index: -1;
-  padding: 0 $padding-inline;
+  padding: 0 $svg-padding;
   overflow: hidden;
 }
 
 .decoration {
-  margin-block-start: calc(-1 * $padding-inline);
-  margin-inline-end: calc(-0.5 * $padding-inline);
+  margin-block-start: calc(-1 * $svg-padding);
+  margin-inline-end: calc(-0.5 * $svg-padding);
   transform: scale($svg-scale);
   padding-block-end: 2rem;
 }
@@ -113,7 +113,7 @@ $svg-scale: 0.8;
   transition: background-color 0.15s linear;
 
   &:hover {
-    background-color: lighten($color: hsl(235, 46%, 15%), $amount: 15%);
+    background-color: lighten($color: clr.$dark-blue, $amount: 10%);
   }
 }
 </style>

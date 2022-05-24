@@ -14,6 +14,7 @@
 </template>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/colors" as clr;
 .three-dots {
   cursor: pointer;
   padding: 8px;
@@ -22,7 +23,7 @@
 }
 
 .three-dots:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: clr.$low-opacity-white;
 }
 
 .three-dots > path {

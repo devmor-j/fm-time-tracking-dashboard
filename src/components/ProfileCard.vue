@@ -64,8 +64,10 @@ watch(selectedTimeframe, () => {
 
 <style lang="scss" scoped>
 @use "../assets/scss/breakpoints" as bp;
+@use "../assets/scss/colors" as clr;
 
 .profile-wrapper {
+  background-color: clr.$blue;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -82,6 +84,7 @@ watch(selectedTimeframe, () => {
 }
 
 .report-for {
+  color: clr.$pale-blue;
   font-size: 0.75rem;
 }
 
@@ -94,6 +97,7 @@ watch(selectedTimeframe, () => {
 }
 
 .timeframe {
+  color: clr.$desaturated-blue;
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -108,12 +112,12 @@ watch(selectedTimeframe, () => {
   transition: color 0.15s linear;
 
   &:hover {
-    color: hsl(236, 100%, 87%);
+    color: clr.$pale-blue;
   }
 }
 
 .timeframe .active {
-  color: whitesmoke;
+  color: clr.$default-text;
 }
 
 @media screen and (min-width: bp.$tablet) {
