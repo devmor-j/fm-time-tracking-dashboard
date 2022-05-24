@@ -65,7 +65,7 @@ const intervalTime = computed(() => {
     </BaseCard>
 
     <!-- card main content -->
-    <BaseCard>
+    <BaseCard class="card-content">
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">{{ getTitle }}</h3>
         <img
@@ -74,7 +74,6 @@ const intervalTime = computed(() => {
           class="three-dots"
         />
       </div>
-
       <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">
           {{ trackings[trackingTimeframe].current }}hrs
@@ -88,7 +87,7 @@ const intervalTime = computed(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .decoration-wrapper {
   --padding-inline: 1rem;
   --svg-scale: 0.8;
@@ -108,5 +107,13 @@ const intervalTime = computed(() => {
   margin-inline-end: calc(-0.5 * var(--padding-inline));
   transform: scale(var(--svg-scale));
   padding-block-end: 2rem;
+}
+
+.card-content {
+  transition: background-color 0.15s linear;
+
+  &:hover {
+    background-color: lighten($color: hsl(235, 46%, 20%), $amount: 15%);
+  }
 }
 </style>

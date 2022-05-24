@@ -63,7 +63,7 @@ watch(selectedTimeframe, () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--clr-blue);
+  background-color: var(--clr-blue-profile);
   font-weight: 300;
   padding: 1.5rem;
   z-index: 1;
@@ -102,6 +102,11 @@ watch(selectedTimeframe, () => {
 
 .interval > li {
   cursor: pointer;
+  transition: color 0.15s linear;
+
+  &:hover {
+    color: hsl(236, 100%, 87%);
+  }
 }
 
 .interval .active {
