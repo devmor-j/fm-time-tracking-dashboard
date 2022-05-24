@@ -20,7 +20,7 @@ watch(selectedTimeframe, () => {
       <!-- width=64 is set inline to prevent layout shift -->
       <!-- image class can be used to override width -->
       <img
-        src="../assets/images/image-jeremy.png"
+        src="/images/image-jeremy.png"
         alt="Jeremy profile image"
         class="profile-image"
         width="56"

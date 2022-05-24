@@ -74,8 +74,16 @@ const getTracking = computed(() => {
   if (pre < 1) {
     result.previous = "zero";
   }
-  console.log(result);
+
   return result;
+});
+
+const getSvgPath = computed(() => {
+  // example for title='work' => '/images/icon-work.svg'
+  const svgName = toLowerCaseAndSpaceToHyphen(props.trackingData.title);
+  const svgPath = `/images/icon-${svgName}.svg`;
+  console.log(svgPath);
+  return svgPath;
 });
 </script>
 
@@ -90,13 +98,7 @@ const getTracking = computed(() => {
         ]
       "
     >
-      <img
-        :src="`src/assets/images/icon-${toLowerCaseAndSpaceToHyphen(
-          $props.trackingData.title
-        )}.svg`"
-        alt=""
-        class="decoration"
-      />
+      <img :src="getSvgPath" alt="" class="decoration" />
     </BaseCard>
 
     <!-- card main content -->
