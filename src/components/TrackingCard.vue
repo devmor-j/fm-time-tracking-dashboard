@@ -44,6 +44,39 @@ function toLowerCaseAndSpaceToHyphen(title: string): string {
   // example 'Some Text' => 'some-text'
   return title.toLowerCase().replace(/\s/g, "-");
 }
+
+// example '4hrs' or '1hr' or 'zero'
+const getTracking = computed(() => {
+  let { current: cur, previous: pre } =
+    tracking.value.timeframes[props.trackingTimeframe];
+  const result: { current: string; previous: string } = {
+    current: cur.toString(),
+    previous: pre.toString(),
+  };
+
+  if (cur > 1) {
+    result.current = cur + "hrs";
+  }
+  if (pre > 1) {
+    result.previous = pre + "hrs";
+  }
+
+  if (cur === 1) {
+    result.current = cur + "hr";
+  }
+  if (pre === 1) {
+    result.previous = pre + "hr";
+  }
+
+  if (cur < 1) {
+    result.current = "zero";
+  }
+  if (pre < 1) {
+    result.previous = "zero";
+  }
+  console.log(result);
+  return result;
+});
 </script>
 
 <template>
@@ -74,11 +107,10 @@ function toLowerCaseAndSpaceToHyphen(title: string): string {
       </div>
       <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">
-          {{ tracking.timeframes[trackingTimeframe].current }}hrs
+          {{ getTracking.current }}
         </h4>
         <time datetime="" :class="cardStyles['datetime']"
-          >Last {{ timeframeToTime }} -
-          {{ tracking.timeframes[trackingTimeframe].previous }}hrs</time
+          >Last {{ timeframeToTime }} - {{ getTracking.previous }}</time
         >
       </div>
     </BaseCard>
@@ -90,6 +122,7 @@ function toLowerCaseAndSpaceToHyphen(title: string): string {
 
 $svg-padding: 1rem;
 $svg-scale: 0.8;
+
 .decoration-wrapper {
   width: 100%;
   position: absolute;
