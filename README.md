@@ -39,8 +39,8 @@ Mobile [375px] iPhone 5/SE
 
 ### Links
 
-- Solution URL: [Github repository](https://github.com/devmor-j/fm-intro-section-with-dropdown-navigation)
-- Live Site URL: [Hosted on Github Pages](https://devmor-j.github.io/fm-intro-section-with-dropdown-navigation/)
+- Solution URL: [Github repository](https://github.com/devmor-j/fm-time-tracking-dashboard)
+- Live Site URL: [Hosted on Github Pages](https://devmor-j.github.io/fm-time-tracking-dashboard/)
 
 ## My process
 
