@@ -1,5 +1,36 @@
 @use "breakpoints" as bp;
 
+.clr-pale-blue {
+  color: hsl(236, 100%, 87%);
+}
+.base-dark-blue {
+  background-color: hsl(235, 46%, 20%);
+}
+.profile-blue {
+  background-color: hsl(246, 80%, 60%);
+}
+.profile-desaturated-blue {
+  color: hsl(235, 45%, 61%);
+}
+.tracking-work {
+  background-color: hsl(15, 100%, 70%);
+}
+.tracking-play {
+  background-color: hsl(195, 74%, 62%);
+}
+.tracking-study {
+  background-color: hsl(348, 100%, 68%);
+}
+.tracking-exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+.tracking-social {
+  background-color: hsl(264, 64%, 52%);
+}
+.tracking-self-care {
+  background-color: hsl(43, 84%, 65%);
+}
+
 .card-wrapper {
   $card-inline-size: 16rem;
   inline-size: min(calc(100% - 2 * 1rem), $card-inline-size);
@@ -31,7 +62,6 @@
 }
 
 .datetime {
-  color: var(--clr-pale-blue);
   font-size: 0.75rem;
 }
 

@@ -40,7 +40,8 @@ const timeframeToTime = computed(() => {
   return result;
 });
 
-function toLowerCaseNoSpace(title: string): string {
+function toLowerCaseAndSpaceToHyphen(title: string): string {
+  // example 'Some Text' => 'some-text'
   return title.toLowerCase().replace(/\s/g, "-");
 }
 </script>
@@ -50,14 +51,14 @@ function toLowerCaseNoSpace(title: string): string {
     <!-- top decoration svg icon -->
     <BaseCard
       class="decoration-wrapper"
-      :style="{
-        'background-color': `var(--clr-card-${toLowerCaseNoSpace(
-          $props.trackingData.title
-        )})`,
-      }"
+      :class="
+        cardStyles[
+          `tracking-${toLowerCaseAndSpaceToHyphen(props.trackingData.title)}`
+        ]
+      "
     >
       <img
-        :src="`src/assets/images/icon-${toLowerCaseNoSpace(
+        :src="`src/assets/images/icon-${toLowerCaseAndSpaceToHyphen(
           $props.trackingData.title
         )}.svg`"
         alt=""
@@ -75,7 +76,9 @@ function toLowerCaseNoSpace(title: string): string {
         <h4 :class="cardStyles.duration">
           {{ tracking.timeframes[trackingTimeframe].current }}hrs
         </h4>
-        <time datetime="" :class="cardStyles.datetime"
+        <time
+          datetime=""
+          :class="[cardStyles['datetime'], cardStyles['clr-pale-blue']]"
           >Last {{ timeframeToTime }} -
           {{ tracking.timeframes[trackingTimeframe].previous }}hrs</time
         >
