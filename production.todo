@@ -1,6 +1,7 @@
 Github:
   tasks to do before create github repo
-  ☐ dot't forget to run 'pnpm lint' on each commit
+  ☐ don't forget to run 'pnpm lint' on each commit
+  ☐ spell check
   ☐ release a major version with a tag (v1.0.0)
   
   Github Pages:
