@@ -1,8 +1,8 @@
 <template>
   <svg
     class="three-dots"
-    width="21"
-    height="5"
+    width="37"
+    height="21"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -14,6 +14,17 @@
 </template>
 
 <style scoped>
+.three-dots {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 1rem;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.three-dots:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .three-dots > path {
   transition: fill 0.1s linear;
 }

@@ -69,7 +69,7 @@ const intervalTime = computed(() => {
     <BaseCard class="card-content">
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">{{ getTitle }}</h3>
-        <IconEllipsis style="cursor: pointer" />
+        <IconEllipsis />
       </div>
       <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">
