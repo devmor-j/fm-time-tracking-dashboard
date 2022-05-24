@@ -111,7 +111,7 @@ const getSvgPath = computed(() => {
         <h4 :class="cardStyles.duration">
           {{ getTracking.current }}
         </h4>
-        <time datetime="" :class="cardStyles['datetime']"
+        <time :datetime="`PT${tracking.timeframes[props.trackingTimeframe].previous}H`" :class="cardStyles['datetime']"
           >Last {{ timeframeToTime }} - {{ getTracking.previous }}</time
         >
       </div>
