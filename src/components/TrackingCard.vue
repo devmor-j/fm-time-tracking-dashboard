@@ -110,7 +110,7 @@ const intervalTime = computed(() => {
   transition: background-color 0.15s linear;
 
   &:hover {
-    background-color: lighten($color: hsl(235, 46%, 20%), $amount: 15%);
+    background-color: lighten($color: hsl(235, 46%, 15%), $amount: 15%);
   }
 }
 </style>
