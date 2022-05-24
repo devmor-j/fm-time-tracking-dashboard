@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import BaseCard from "./BaseCard.vue";
-import cardStyles from "../assets/scss/card.module.scss";
 import IconEllipsis from "./icons/IconEllipsis.vue";
+import cardStyles from "@/assets/scss/card.module.scss";
 import type { TrackingData } from "@/types/TrackingData";
 import type { ProfileTimeframe } from "@/types/ProfileTimeframe";
 

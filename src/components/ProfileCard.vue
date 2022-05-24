@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import BaseCard from "./BaseCard.vue";
-import cardStyles from "../assets/scss/card.module.scss";
+import cardStyles from "@/assets/scss/card.module.scss";
 import type { ProfileTimeframe } from "@/types/ProfileTimeframe";
 
 const emits = defineEmits(["timeframeChange"]);
