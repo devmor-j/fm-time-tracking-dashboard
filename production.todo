@@ -11,7 +11,7 @@ Frontend Mentor:
   tasks to complete before submitting to Frontend Mentor
   CSS:
     ☐ convert all css files to scss
-    ☐ use lang='scss' on all style tags in .vue files
+    ✔ use lang='scss' on all style tags in .vue files @done(22-05-24 16:25)
     ☐ use scss variables $ instead of css custom properties var(--)
 
   Docs:

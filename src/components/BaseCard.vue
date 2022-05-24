@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .card {
   background-color: var(--clr-dark-blue);
   border-radius: 1rem;

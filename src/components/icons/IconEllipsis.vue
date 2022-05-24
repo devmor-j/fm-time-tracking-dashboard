@@ -13,7 +13,7 @@
   </svg>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .three-dots {
   cursor: pointer;
   padding: 8px;
