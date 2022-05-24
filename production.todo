@@ -16,7 +16,7 @@ Frontend Mentor:
     ✔ use scss variables $ instead of css custom properties var(--) @done(22-05-24 17:30)
 
   Docs:
-    ☐ write readme based on available template
+    ✔ write readme based on available template @done(22-05-24 23:43)
 
   Typescript:
     ✔ improve types if possible @done(22-05-24 18:57)

@@ -1,46 +1,85 @@
-# time-tracking-dashboard
+# Frontend Mentor - Time tracking dashboard solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is my solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Type Support for `.vue` Imports in TS
+## Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### The challenge
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Users should be able to:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Switch between viewing Daily, Weekly, and Monthly stats
 
-## Customize configuration
+### Screenshot
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Designed with responsiveness in mind. Mobile-first developement means this project was styled for small screens with a `flexbox stack layout'. Tablet breakpoint is on 768px which means that screens larger than that will view the`grid layout`.
 
-## Project Setup
+Desktop [1536px]
 
-```sh
-pnpm install
-```
+![Desktop](./screenshots/Desktop%20%5B1536px%5D%20Time%20tracking%20dashboard.webp)
 
-### Compile and Hot-Reload for Development
+Mobile [375px] iPhone 5/SE
 
-```sh
-pnpm dev
-```
+![Mobile](./screenshots/Mobile%20%5B375px%5D%20Time%20tracking%20dashboard.webp)
 
-### Type-Check, Compile and Minify for Production
+### Links
 
-```sh
-pnpm build
-```
+- Solution URL: [Github repository](https://github.com/devmor-j/fm-intro-section-with-dropdown-navigation)
+- Live Site URL: [Hosted on Github Pages](https://devmor-j.github.io/fm-intro-section-with-dropdown-navigation/)
 
-### Lint with [ESLint](https://eslint.org/)
+## My process
 
-```sh
-pnpm lint
-```
+### Built with
+
+- Semantic HTML5 markup
+- Mobile-first workflow
+- CSS custom properties + Flexbox and Grid
+- [Vue.js 3](https://vuejs.org/) - The Progressive JavaScript Framework
+- [TypeScript](https://www.typescriptlang.org/) - TypeScript is JavaScript with syntax for types
+- [Vite.js](https://vitejs.dev/) - Next Generation Frontend Tooling
+- [Modern Css Reset](https://github.com/hankchizljaw/modern-css-reset) - One of the best resetters
+- [SASS](https://sass-lang.com) - CSS with superpowers
+- [CSS Modules](https://github.com/css-modules/css-modules) - A CSS Module is a CSS file in which all class names and animation names are scoped locally by default
+- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
+- [Prettier](https://prettier.io/) - Opinionated Code Formatter
+
+### Further development
+
+If you wanna work on a new feature try adding transition on tracking cards when profile timeframe changes.
+
+Another feature would be showing 'zero' instead of `0hrs` which I already implemented but you can clone this repo and strat from scratch.
+
+If you like to debug and refactor css then try to drop css modules and use native vue scoped styles.
+
+One more task for css development is to drop dependency for `css-modern-reset` which I don't recommend personally but if you hate css magics then this will make you write all those hidden reset styles.
+
+### Useful resources
+
+- [Dynamic image source `<img :src="..." />` not working](https://stackoverflow.com/questions/40491506/vue-js-dynamic-images-not-working) - Note that setting your img src via v-bind (`:{property}`) does not work in vite build process. instead put your images in `public` folder. [another discussion](https://forum.vuejs.org/t/dynamic-img-src-of-item-in-for-loop/119695)
+
+- [ISO 8601 Duration in JavaScript](https://www.twilio.com/blog/parse-iso8601-duration-javascript) - Helps robots to know this app is about time and also Google will love this semantic tag:
+
+  ```html
+  <time datetime="..."><time/>
+  ```
+
+  An example will be `datetime="PT36H"` witch means 36 hours duration. If you're interested in working with this type of time then refer to [TinyDuration](https://github.com/MelleB/tinyduration) and [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
+
+## Author
+
+- Frontend Mentor - [@devmor-j](https://www.frontendmentor.io/profile/devmor-j)
