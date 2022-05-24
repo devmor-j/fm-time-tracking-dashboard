@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import BaseCard from "./BaseCard.vue";
-import cardStyles from "../assets/card.module.scss";
+import cardStyles from "../assets/scss/card.module.scss";
 import IconEllipsis from "./icons/IconEllipsis.vue";
 import type { TrackingType } from "@/types/TrackingType";
 import type { Timeframe } from "../types/Timeframe";

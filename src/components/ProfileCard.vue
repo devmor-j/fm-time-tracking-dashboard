@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import BaseCard from "./BaseCard.vue";
-import cardStyles from "../assets/card.module.scss";
+import cardStyles from "../assets/scss/card.module.scss";
 import type { Timeframe } from "../types/Timeframe";
 
 const emits = defineEmits(["timeframeChanged"]);
@@ -57,7 +57,7 @@ watch(selectedTimeframe, () => {
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/breakpoints" as break;
+@use "../assets/scss/breakpoints" as bp;
 
 .profile-wrapper {
   display: flex;
@@ -113,7 +113,7 @@ watch(selectedTimeframe, () => {
   color: whitesmoke;
 }
 
-@media screen and (min-width: break.$tablet) {
+@media screen and (min-width: bp.$tablet) {
   .profile-wrapper {
     flex-direction: column;
   }

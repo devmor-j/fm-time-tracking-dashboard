@@ -51,8 +51,8 @@ function onTimeframeChanged(selectedTimeframe: Timeframe) {
 </template>
 
 <style lang="scss">
-@use "./assets/breakpoints" as break;
-@import "./assets/base.css";
+@use "./assets/scss/base";
+@use "./assets/scss/breakpoints" as bp;
 
 #app {
   display: flex;
@@ -79,7 +79,7 @@ function onTimeframeChanged(selectedTimeframe: Timeframe) {
   margin: 0;
 }
 
-@media screen and (min-width: break.$tablet) {
+@media screen and (min-width: bp.$tablet) {
   .profile-card {
     grid-row: 1/3;
   }
