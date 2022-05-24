@@ -1,7 +1,16 @@
 <script setup lang="ts">
+import { ref, watch } from "vue";
 import BaseCard from "./BaseCard.vue";
-
 import cardStyles from "../assets/card.module.scss";
+import type { Timeframe } from "../types/Timeframe";
+
+const emits = defineEmits(["timeframeChanged"]);
+
+const selectedTimeframe = ref<Timeframe>("weekly");
+
+watch(selectedTimeframe, () => {
+  emits("timeframeChanged", selectedTimeframe.value);
+});
 </script>
 
 <template>
@@ -10,7 +19,12 @@ import cardStyles from "../assets/card.module.scss";
     <BaseCard class="profile-wrapper">
       <!-- width=64 is set inline to prevent layout shift -->
       <!-- image class can be used to override width -->
-      <img src="../assets/images/image-jeremy.png" alt="Jeremy profile image" class="profile-image" width="56">
+      <img
+        src="../assets/images/image-jeremy.png"
+        alt="Jeremy profile image"
+        class="profile-image"
+        width="56"
+      />
       <div>
         <span class="report-for">Report for</span>
         <h3 class="profile-name">Jeremy Robson</h3>
@@ -19,16 +33,31 @@ import cardStyles from "../assets/card.module.scss";
     <!-- interval selection -->
     <BaseCard class="interval-wrapper">
       <ul class="interval" role="list">
-        <li>Daily</li>
-        <li class="active">Weekly</li>
-        <li>Monthly</li>
+        <li
+          @click="selectedTimeframe = 'daily'"
+          :class="{ active: selectedTimeframe == 'daily' }"
+        >
+          Daily
+        </li>
+        <li
+          @click="selectedTimeframe = 'weekly'"
+          :class="{ active: selectedTimeframe == 'weekly' }"
+        >
+          Weekly
+        </li>
+        <li
+          @click="selectedTimeframe = 'monthly'"
+          :class="{ active: selectedTimeframe == 'monthly' }"
+        >
+          Monthly
+        </li>
       </ul>
     </BaseCard>
   </div>
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/breakpoints"as break;
+@use "../assets/breakpoints" as break;
 
 .profile-wrapper {
   display: flex;

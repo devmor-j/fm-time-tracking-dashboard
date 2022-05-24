@@ -1,39 +1,88 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import BaseCard from "./BaseCard.vue";
 import cardStyles from "../assets/card.module.scss";
-import { computed } from "vue";
+import type { TrackingType } from "@/types/TrackingType";
+import type { Timeframe } from "../types/Timeframe";
+import type { Interval } from "@/types/Interval";
 
 const props = defineProps<{
-  type: ('work' | 'play' | 'study' | 'exercise' | 'social' | 'self-care'),
-}>()
+  trackingType: TrackingType;
+  trackingStats: Interval;
+  trackingTimeframe: Timeframe;
+}>();
 
 const getTitle = computed(() => {
-  const result = props.type[0].toUpperCase() + props.type.slice(1);
-  if (props.type === 'self-care') {
-    return 'Self Care';
+  const result =
+    props.trackingType[0].toUpperCase() + props.trackingType.slice(1);
+  if (props.trackingType === "self-care") {
+    return "Self Care";
   }
   return result;
-})
+});
 
+// note that we can't use a ref on props.trackingStats directly
+// because DOM is not ready to be called on template
+const trackings = computed(() => {
+  return props.trackingStats;
+});
+
+const intervalTime = computed(() => {
+  let result;
+  switch (props.trackingTimeframe) {
+    case "daily":
+      result = "Day";
+      break;
+    case "weekly":
+      result = "Week";
+      break;
+    case "monthly":
+      result = "Month";
+      break;
+
+    // just in case we put default value
+    default:
+      result = "Time";
+      break;
+  }
+
+  return result;
+});
 </script>
 
 <template>
   <div :class="cardStyles['card-wrapper']">
     <!-- top decoration svg icon -->
-    <BaseCard class="decoration-wrapper" :style="{ 'background-color': `var(--clr-card-${$props.type})` }">
-      <img :src="`src/assets/images/icon-${$props.type}.svg`" alt="" class="decoration" />
+    <BaseCard
+      class="decoration-wrapper"
+      :style="{ 'background-color': `var(--clr-card-${$props.trackingType})` }"
+    >
+      <img
+        :src="`src/assets/images/icon-${$props.trackingType}.svg`"
+        alt=""
+        class="decoration"
+      />
     </BaseCard>
 
     <!-- card main content -->
     <BaseCard>
       <div :class="cardStyles.header">
         <h3 :class="cardStyles.title">{{ getTitle }}</h3>
-        <img src="../assets/images/icon-ellipsis.svg" alt="" class="three-dots" />
+        <img
+          src="../assets/images/icon-ellipsis.svg"
+          alt=""
+          class="three-dots"
+        />
       </div>
 
       <div :class="[cardStyles.header, cardStyles['column-header']]">
-        <h4 :class="cardStyles.duration">32hrs</h4>
-        <time datetime="" :class="cardStyles.datetime">Last Week - 36hrs</time>
+        <h4 :class="cardStyles.duration">
+          {{ trackings[trackingTimeframe].current }}hrs
+        </h4>
+        <time datetime="" :class="cardStyles.datetime"
+          >Last {{ intervalTime }} -
+          {{ trackings[trackingTimeframe].previous }}hrs</time
+        >
       </div>
     </BaseCard>
   </div>

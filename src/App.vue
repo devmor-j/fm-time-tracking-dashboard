@@ -1,22 +1,57 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import TrackingCard from "./components/TrackingCard.vue";
 import ProfileCard from "./components/ProfileCard.vue";
+import type { Timeframe } from "./types/Timeframe";
+
+import trackingData from "./assets/data.json";
+
+const timeframe = ref<Timeframe>("weekly");
+
+function onTimeframeChanged(selectedTimeframe: Timeframe) {
+  // update TrackingCard's data based on new timeframe selected on ProfileCard
+  timeframe.value = selectedTimeframe;
+}
 </script>
 
 <template>
   <main class="container">
-    <ProfileCard class="profile-card" />
-    <TrackingCard type="work" />
-    <TrackingCard type="play" />
-    <TrackingCard type="study" />
-    <TrackingCard type="exercise" />
-    <TrackingCard type="social" />
-    <TrackingCard type="self-care" />
+    <ProfileCard class="profile-card" @timeframe-changed="onTimeframeChanged" />
+    <TrackingCard
+      tracking-type="work"
+      :tracking-stats="trackingData[0].timeframes"
+      :tracking-timeframe="timeframe"
+    />
+    <TrackingCard
+      tracking-type="play"
+      :tracking-stats="trackingData[1].timeframes"
+      :tracking-timeframe="timeframe"
+    />
+    <TrackingCard
+      tracking-type="study"
+      :tracking-stats="trackingData[2].timeframes"
+      :tracking-timeframe="timeframe"
+    />
+    <TrackingCard
+      tracking-type="exercise"
+      :tracking-stats="trackingData[3].timeframes"
+      :tracking-timeframe="timeframe"
+    />
+    <TrackingCard
+      tracking-type="social"
+      :tracking-stats="trackingData[4].timeframes"
+      :tracking-timeframe="timeframe"
+    />
+    <TrackingCard
+      tracking-type="self-care"
+      :tracking-stats="trackingData[5].timeframes"
+      :tracking-timeframe="timeframe"
+    />
   </main>
 </template>
 
 <style lang="scss">
-@use "./assets/breakpoints"as break;
+@use "./assets/breakpoints" as break;
 @import "./assets/base.css";
 
 #app {
