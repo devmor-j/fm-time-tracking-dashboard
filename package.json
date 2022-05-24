@@ -1,6 +1,6 @@
 {
   "name": "time-tracking-dashboard",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Morteza Jamshidi <devmor.j@gmail.com>",
   "scripts": {
     "dev": "vite",
