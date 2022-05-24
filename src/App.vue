@@ -68,7 +68,6 @@ function onTimeframeChanged(selectedTimeframe: Timeframe) {
   align-items: center;
   flex-direction: column;
   width: min(100%, 60rem);
-
   padding-block: 4rem;
   row-gap: 1.5rem;
   --card-overlap-size: 1.5rem;

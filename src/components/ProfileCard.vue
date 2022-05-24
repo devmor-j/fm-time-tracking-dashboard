@@ -63,7 +63,7 @@ watch(selectedTimeframe, () => {
   display: flex;
   align-items: center;
   gap: 1rem;
-  background-color: var(--clr-blue-profile);
+  background-color: var(--clr-profile-blue);
   font-weight: 300;
   padding: 1.5rem;
   z-index: 1;

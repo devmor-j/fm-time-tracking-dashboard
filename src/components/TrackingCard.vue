@@ -85,9 +85,9 @@ const intervalTime = computed(() => {
 </template>
 
 <style lang="scss" scoped>
+  $padding-inline: 1rem;
+  $svg-scale: 0.8;
 .decoration-wrapper {
-  --padding-inline: 1rem;
-  --svg-scale: 0.8;
   width: 100%;
   position: absolute;
   top: -2rem;
@@ -95,14 +95,14 @@ const intervalTime = computed(() => {
   justify-content: end;
   align-items: center;
   z-index: -1;
-  padding: 0 var(--padding-inline);
+  padding: 0 $padding-inline;
   overflow: hidden;
 }
 
 .decoration {
-  margin-block-start: calc(-1 * var(--padding-inline));
-  margin-inline-end: calc(-0.5 * var(--padding-inline));
-  transform: scale(var(--svg-scale));
+  margin-block-start: calc(-1 * $padding-inline);
+  margin-inline-end: calc(-0.5 * $padding-inline);
+  transform: scale($svg-scale);
   padding-block-end: 2rem;
 }
 
