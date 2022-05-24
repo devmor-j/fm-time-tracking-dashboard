@@ -1,5 +1,5 @@
 export type TrackingData = {
-  title: string,
+  title: string;
   timeframes: {
     daily: {
       current: number;
@@ -13,5 +13,5 @@ export type TrackingData = {
       current: number;
       previous: number;
     };
-  },
+  };
 };

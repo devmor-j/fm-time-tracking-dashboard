@@ -3,32 +3,22 @@ import { computed } from "vue";
 import BaseCard from "./BaseCard.vue";
 import cardStyles from "../assets/scss/card.module.scss";
 import IconEllipsis from "./icons/IconEllipsis.vue";
-import type { TrackingType } from "@/types/TrackingType";
-import type { Timeframe } from "../types/Timeframe";
-import type { Interval } from "@/types/Interval";
+import type { TrackingData } from "@/types/TrackingData";
+import type { ProfileTimeframe } from "@/types/ProfileTimeframe";
 
 const props = defineProps<{
-  trackingType: TrackingType | string;
-  trackingStats: Interval;
-  trackingTimeframe: Timeframe;
+  trackingData: TrackingData;
+  trackingTimeframe: ProfileTimeframe;
 }>();
 
-const getTitle = computed(() => {
-  const result =
-    props.trackingType[0].toUpperCase() + props.trackingType.slice(1);
-  if (props.trackingType === "self-care") {
-    return "Self Care";
-  }
-  return result;
-});
-
-// note that we can't use a ref on props.trackingStats directly
+// note that we can't use a ref on props.trackingData directly
 // because DOM is not ready to be called on template
-const trackings = computed(() => {
-  return props.trackingStats;
+const tracking = computed(() => {
+  return props.trackingData;
 });
 
-const intervalTime = computed(() => {
+const timeframeToTime = computed(() => {
+  // example 'daily' => 'Day'
   let result;
   switch (props.trackingTimeframe) {
     case "daily":
@@ -49,6 +39,10 @@ const intervalTime = computed(() => {
 
   return result;
 });
+
+function toLowerCaseNoSpace(title: string): string {
+  return title.toLowerCase().replace(/\s/g, "-");
+}
 </script>
 
 <template>
@@ -56,10 +50,16 @@ const intervalTime = computed(() => {
     <!-- top decoration svg icon -->
     <BaseCard
       class="decoration-wrapper"
-      :style="{ 'background-color': `var(--clr-card-${$props.trackingType})` }"
+      :style="{
+        'background-color': `var(--clr-card-${toLowerCaseNoSpace(
+          $props.trackingData.title
+        )})`,
+      }"
     >
       <img
-        :src="`src/assets/images/icon-${$props.trackingType}.svg`"
+        :src="`src/assets/images/icon-${toLowerCaseNoSpace(
+          $props.trackingData.title
+        )}.svg`"
         alt=""
         class="decoration"
       />
@@ -68,16 +68,16 @@ const intervalTime = computed(() => {
     <!-- card main content -->
     <BaseCard class="card-content">
       <div :class="cardStyles.header">
-        <h3 :class="cardStyles.title">{{ getTitle }}</h3>
+        <h3 :class="cardStyles.title">{{ $props.trackingData.title }}</h3>
         <IconEllipsis />
       </div>
       <div :class="[cardStyles.header, cardStyles['column-header']]">
         <h4 :class="cardStyles.duration">
-          {{ trackings[trackingTimeframe].current }}hrs
+          {{ tracking.timeframes[trackingTimeframe].current }}hrs
         </h4>
         <time datetime="" :class="cardStyles.datetime"
-          >Last {{ intervalTime }} -
-          {{ trackings[trackingTimeframe].previous }}hrs</time
+          >Last {{ timeframeToTime }} -
+          {{ tracking.timeframes[trackingTimeframe].previous }}hrs</time
         >
       </div>
     </BaseCard>
@@ -85,8 +85,8 @@ const intervalTime = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-  $padding-inline: 1rem;
-  $svg-scale: 0.8;
+$padding-inline: 1rem;
+$svg-scale: 0.8;
 .decoration-wrapper {
   width: 100%;
   position: absolute;

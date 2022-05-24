@@ -19,7 +19,7 @@ Frontend Mentor:
     ☐ write readme based on available template
 
   Typescript:
-    ☐ improve types if possible
+    ✔ improve types if possible @done(22-05-24 18:57)
 
   Vue:
-    ☐ define simpler props if possible
+    ✔ define simpler props if possible @done(22-05-24 18:58)

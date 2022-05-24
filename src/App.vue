@@ -2,33 +2,39 @@
 import { ref } from "vue";
 import TrackingCard from "./components/TrackingCard.vue";
 import ProfileCard from "./components/ProfileCard.vue";
-import type { Timeframe } from "./types/Timeframe";
+import type { ProfileTimeframe } from "@/types/ProfileTimeframe";
+import type { TrackingData } from "@/types/TrackingData";
 
-import trackingData from "./assets/data.json";
-import type { TrackingType } from "./types/TrackingType";
+import rawData from "./assets/raw_data.json";
 
-const timeframe = ref<Timeframe>("weekly");
+// declare type on raw data as an array of TrackingData type
+const trackingData: Array<TrackingData> = rawData;
+const profileTimeframe = ref<ProfileTimeframe>("weekly");
 
-function onTimeframeChanged(selectedTimeframe: Timeframe) {
+function onProfileTimeframeChange(selectedTimeframe: ProfileTimeframe) {
   // update TrackingCard's data based on new timeframe selected on ProfileCard
-  timeframe.value = selectedTimeframe;
-}
-
-function fixTitles(title: string): TrackingType {
-  return title.toLowerCase().replace(/\s/g, '-') as TrackingType;
+  profileTimeframe.value = selectedTimeframe;
 }
 </script>
 
 <template>
   <main class="container">
-    <ProfileCard class="profile-card" @timeframe-changed="onTimeframeChanged" />
-    <TrackingCard v-for="(data, index) in trackingData" :key="index" :tracking-type="fixTitles(data.title)" :tracking-stats="data.timeframes" :tracking-timeframe="timeframe" />
+    <ProfileCard
+      class="profile-card"
+      @timeframe-change="onProfileTimeframeChange"
+    />
+    <TrackingCard
+      v-for="(data, index) in trackingData"
+      :key="index"
+      :tracking-data="data"
+      :tracking-timeframe="profileTimeframe"
+    />
   </main>
 </template>
 
 <style lang="scss">
 @use "./assets/scss/base";
-@use "./assets/scss/breakpoints"as bp;
+@use "./assets/scss/breakpoints" as bp;
 
 #app {
   display: flex;

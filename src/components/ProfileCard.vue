@@ -2,14 +2,14 @@
 import { ref, watch } from "vue";
 import BaseCard from "./BaseCard.vue";
 import cardStyles from "../assets/scss/card.module.scss";
-import type { Timeframe } from "../types/Timeframe";
+import type { ProfileTimeframe } from "@/types/ProfileTimeframe";
 
-const emits = defineEmits(["timeframeChanged"]);
+const emits = defineEmits(["timeframeChange"]);
 
-const selectedTimeframe = ref<Timeframe>("weekly");
+const selectedTimeframe = ref<ProfileTimeframe>("weekly");
 
 watch(selectedTimeframe, () => {
-  emits("timeframeChanged", selectedTimeframe.value);
+  emits("timeframeChange", selectedTimeframe.value);
 });
 </script>
 
@@ -30,9 +30,9 @@ watch(selectedTimeframe, () => {
         <h3 class="profile-name">Jeremy Robson</h3>
       </div>
     </BaseCard>
-    <!-- interval selection -->
-    <BaseCard class="interval-wrapper">
-      <ul class="interval" role="list">
+    <!-- profile timeframe selection -->
+    <BaseCard class="timeframe-wrapper">
+      <ul class="timeframe" role="list">
         <li
           @click="selectedTimeframe = 'daily'"
           :class="{ active: selectedTimeframe == 'daily' }"
@@ -85,11 +85,11 @@ watch(selectedTimeframe, () => {
   font-weight: inherit;
 }
 
-.interval-wrapper {
+.timeframe-wrapper {
   transform: translateY(var(--profile-card-transform));
 }
 
-.interval {
+.timeframe {
   display: flex;
   justify-content: space-between;
   list-style: none;
@@ -100,7 +100,7 @@ watch(selectedTimeframe, () => {
   font-size: 0.875rem;
 }
 
-.interval > li {
+.timeframe > li {
   cursor: pointer;
   transition: color 0.15s linear;
 
@@ -109,7 +109,7 @@ watch(selectedTimeframe, () => {
   }
 }
 
-.interval .active {
+.timeframe .active {
   color: whitesmoke;
 }
 
@@ -130,11 +130,11 @@ watch(selectedTimeframe, () => {
     padding-block-end: 2rem;
   }
 
-  .interval {
+  .timeframe {
     flex-direction: column;
   }
 
-  .interval > li {
+  .timeframe > li {
     padding-block: 0.5rem;
   }
 }
