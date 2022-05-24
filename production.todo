@@ -1,12 +1,12 @@
 Github:
   tasks to do before create github repo
-  ☐ don't forget to run 'pnpm lint' on each commit
-  ☐ spell check
+  ✔ don't forget to run 'pnpm lint' on each commit @done(22-05-24 21:08)
+  ✔ spell check @done(22-05-24 21:08)
   ☐ release a major version with a tag (v1.0.0)
   
   Github Pages:
     before deployment on github pages
-    ☐ make sure vite.config.js has base of './'
+    ✔ make sure vite.config.js has base of './' @done(22-05-24 21:08)
 
 Frontend Mentor:
   tasks to complete before submitting to Frontend Mentor
