@@ -8,7 +8,7 @@ import type { Timeframe } from "../types/Timeframe";
 import type { Interval } from "@/types/Interval";
 
 const props = defineProps<{
-  trackingType: TrackingType;
+  trackingType: TrackingType | string;
   trackingStats: Interval;
   trackingTimeframe: Timeframe;
 }>();
