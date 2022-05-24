@@ -1,0 +1,24 @@
+Github:
+  tasks to do before create github repo
+  ☐ dot't forget to run 'pnpm lint' on each commit
+  ☐ release a major version with a tag (v1.0.0)
+  
+  Github Pages:
+    before deployment on github pages
+    ☐ make sure vite.config.js has base of './'
+
+Frontend Mentor:
+  tasks to complete before submitting to Frontend Mentor
+  CSS:
+    ☐ convert all css files to scss
+    ☐ use lang='scss' on all style tags in .vue files
+    ☐ use scss variables $ instead of css custom properties var(--)
+
+  Docs:
+    ☐ write readme based on available template
+
+  Typescript:
+    ☐ improve types if possible
+
+  Vue:
+    ☐ define simpler props if possible
