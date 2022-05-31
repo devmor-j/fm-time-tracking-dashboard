@@ -19,10 +19,14 @@ function onProfileTimeframeChange(selectedTimeframe: ProfileTimeframe) {
 
 <template>
   <main class="container">
+    <!-- h1 tag for screen readers only -->
+    <h1 class="visually-hidden">Tracking time report for Jeremy Robson</h1>
+
     <ProfileCard
       class="profile-card"
       @timeframe-change="onProfileTimeframeChange"
     />
+
     <TrackingCard
       v-for="(data, index) in trackingData"
       :key="index"
@@ -72,5 +76,15 @@ function onProfileTimeframeChange(selectedTimeframe: ProfileTimeframe) {
     row-gap: 0rem;
     place-items: center;
   }
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 </style>
