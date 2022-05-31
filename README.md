@@ -10,7 +10,6 @@ This is my solution to the [Time tracking dashboard challenge on Frontend Mentor
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
@@ -27,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-Designed with responsiveness in mind. Mobile-first developement means this project was styled for small screens with a `flexbox stack layout'. Tablet breakpoint is on 768px which means that screens larger than that will view the`grid layout`.
+Designed with responsiveness in mind. Mobile-first developement means this project was styled for small screens with a `flexbox stack layout`. Tablet breakpoint is on 768px which means that screens larger than that will view the `grid layout`.
 
 Desktop [1536px]
 
@@ -58,7 +57,7 @@ Mobile [375px] iPhone 5/SE
 - [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code
 - [Prettier](https://prettier.io/) - Opinionated Code Formatter
 
-### Further development
+### Continued development
 
 If you wanna work on a new feature try adding transition on tracking cards when profile timeframe changes.
 
@@ -78,7 +77,7 @@ One more task for css development is to drop dependency for `css-modern-reset` w
   <time datetime="..."><time/>
   ```
 
-  An example will be `datetime="PT36H"` witch means 36 hours duration. If you're interested in working with this type of time then refer to [TinyDuration](https://github.com/MelleB/tinyduration) and [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
+  An example will be `datetime="PT36H"` witch means 36 hours duration. For more info please refer to [TinyDuration](https://github.com/MelleB/tinyduration) and [MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time).
 
 ## Author
 
