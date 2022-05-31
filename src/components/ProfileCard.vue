@@ -8,7 +8,7 @@ const emits = defineEmits(["timeframeChange"]);
 
 const selectedTimeframe = ref<ProfileTimeframe>("weekly");
 
-watch(selectedTimeframe, () => {
+watch(selectedTimeframe, (): void => {
   emits("timeframeChange", selectedTimeframe.value);
 });
 </script>
@@ -32,6 +32,7 @@ watch(selectedTimeframe, () => {
         <h3 class="profile-name">Jeremy Robson</h3>
       </div>
     </BaseCard>
+
     <!-- profile timeframe selection -->
     <BaseCard class="timeframe-wrapper">
       <ul
@@ -128,7 +129,7 @@ watch(selectedTimeframe, () => {
   .profile-image {
     align-self: start;
     width: 4rem;
-    margin-block-end: 00.5rem;
+    margin-block-end: 0.5rem;
   }
 
   .profile-name {

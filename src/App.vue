@@ -11,7 +11,7 @@ import rawData from "./assets/raw_data.json";
 const trackingData: Array<TrackingData> = rawData;
 const profileTimeframe = ref<ProfileTimeframe>("weekly");
 
-function onProfileTimeframeChange(selectedTimeframe: ProfileTimeframe) {
+function onProfileTimeframeChange(selectedTimeframe: ProfileTimeframe): void {
   // update TrackingCard's data based on new timeframe selected on ProfileCard
   profileTimeframe.value = selectedTimeframe;
 }

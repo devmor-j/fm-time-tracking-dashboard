@@ -10,7 +10,8 @@ export default defineConfig({
     vue(),
     createHtmlPlugin({
       minify: true,
-    })],
+    }),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
