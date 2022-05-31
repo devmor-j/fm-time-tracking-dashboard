@@ -35,6 +35,7 @@ watch(selectedTimeframe, (): void => {
 
     <!-- profile timeframe selection -->
     <BaseCard class="timeframe-wrapper">
+    <!-- please don't remove role="list" because it's needed for modern-css-reset to reset ul styles -->
       <ul
         class="timeframe"
         :class="cardStyles['profile-desaturated-blue']"
